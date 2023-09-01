@@ -27,19 +27,33 @@ public class Main {
         System.out.println("\n======================\n");
 
         Contestant[] contestant = {
-                new Cat(10, 7),
-                new Human(14, 8),
-                new Robot(10, 4)
+                new Cat(21, 30),
+                new Human(31, 2),
+                new Robot(89, 45)
         };
 
         Obstacle[] obstacle = {
-                new Treadmill(30),
-                new Wall(4)
+                new Treadmill(20),
+                new Wall(15)
         };
 
+
         for (Contestant contestants: contestant) {
+            boolean canContinue = true;
             for (Obstacle obstacles: obstacle) {
-                obstacles.overcome(contestants);
+                if (!obstacles.overcome(contestants)) {
+                    canContinue = false;
+                    System.out.println("Participant " + contestants.getContestantName() + " did not pass the obstacle " + obstacles.getObstacleName());
+                    break;
+                } else {
+                    System.out.println("Participant " + contestants.getContestantName() + " passed the obstacle " + obstacles.getObstacleName());
+                }
+
+                if (canContinue) {
+                    System.out.println("Participant " + contestants.getContestantName() + " completed the course successfully!");
+                } else {
+                    System.out.println("Participant " + contestants.getContestantName() + " was eliminated.");
+                }
             }
         }
     }

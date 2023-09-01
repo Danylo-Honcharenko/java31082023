@@ -3,6 +3,7 @@ package competition;
 public class Robot extends Contestant {
     private int runningLimit;
     private int jumpLimit;
+    private String name = "Robot";
 
     public Robot(int runningLimit, int jumpLimit) {
         this.runningLimit = runningLimit;
@@ -27,5 +28,10 @@ public class Robot extends Contestant {
     @Override
     public int getJumpLimit() {
         return jumpLimit;
+    }
+
+    @Override
+    public String getContestantName() {
+        return name;
     }
 }

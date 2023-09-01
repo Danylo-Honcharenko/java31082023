@@ -2,14 +2,13 @@ package competition.obstacle;
 
 import competition.Contestant;
 
-public interface Obstacle {
-    void overcome(Contestant contestant);
-
-    default int getLength() {
+public abstract class Obstacle {
+    public abstract boolean overcome(Contestant contestant);
+    public int getLength() {
         return 0;
     }
-
-    default int getHeight() {
+    public int getHeight() {
         return 0;
     }
+    public abstract String getObstacleName();
 }

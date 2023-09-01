@@ -5,4 +5,5 @@ public abstract class Contestant {
     public abstract String jump();
     public abstract int getRunningLimit();
     public abstract int getJumpLimit();
+    public abstract String getContestantName();
 }
